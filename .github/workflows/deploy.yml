@@ -27,5 +27,5 @@ jobs:
         PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
         PA_DEPLOY_PATH: ${{ secrets.PA_DEPLOY_PATH }}
       run: |
-        curl -X POST https://www.pythonanywhere.com/api/v0/user/$PA_USERNAME/webapps/$PA_USERNAME.pythonanywhere.com/reload/ \
+        curl --fail -X POST https://www.pythonanywhere.com/api/v0/user/$PA_USERNAME/webapps/$PA_USERNAME.pythonanywhere.com/reload/ \
         -H "Authorization: Token $PA_API_TOKEN"
